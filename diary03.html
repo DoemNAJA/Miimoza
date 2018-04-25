@@ -15,23 +15,43 @@ body {font-family: "Lato", sans-serif}
  </head>
 <body background="https://i.pinimg.com/564x/d4/0e/2a/d40e2ab0148489c52b06fae516e2eed6.jpg">
 
-<!-- Navbars -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hover-white">    <img src="https://raw.githubusercontent.com/Miimolnwza/miimoza/master/Miimoza-logo%20(1).png" width="70" height="50"/></a>
-    <a href="https://miimolnwza.github.io/miimoza" class="w3-bar-item w3-button w3-margin-top w3-hide-small w3-hover-black">HOME</a>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+<!-- Sidebar/menu -->
+<nav class=" w3-sidebar w3-bar-block w3-cyan w3-hover-pale-blue w3-dropdown-content w3-animate-left w3-text-pale-yellow w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <h3 class=" w3-center">
+  <img src="https://github.com/Miimolnwza/miimoza/blob/master/Miimoza-logo%20(1).png?raw=true" width="250" height="200">
+  <br><b>MY DIARY BLOG</b></h3>
+  <div class="w3-padding-32">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="https://miimolnwza.github.io/miimoza/" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+<div class="w3-dropdown-hover w3-center">
+    <a href="#diary" class="w3-button w3-bar-item w3-center">DIARY</a>
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="https://miimolnwza.github.io/miimoza/diary01" onclick="w3_close()" class="w3-bar-item w3-button">ร้องเพลงสถาบันฉันรัก ม.อ.</a>
+      <a href="https://miimolnwza.github.io/miimoza/diary02" class="w3-bar-item w3-button" onclick="w3_close()">สอบนั้นใครว่าไม่สำคัญ</a>
+     <a href="https://miimolnwza.github.io/miimoza/diary03" class="w3-bar-item w3-button" onclick="w3_close()"> ค่ายสานใจกับพี่สวัสขาขาด 😝</a>
+    </div>
+    </div>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT US</a> 
+  <div class="w3-dropdown-hover w3-center">
+    <button onclick="w3_close()" class="w3-button w3-center">ABOUT US</button>
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="https://miimolnwza.github.io/miimoza/wanut" onclick="w3_close()" class="w3-bar-item w3-button">WANUT</a>
+      <a href="https://miimolnwza.github.io/miimoza/nichaphat.html" class="w3-bar-item w3-button" onclick="w3_close()">NICHAPAT</a>
+    </div>
+    </div>
   </div>
-</div>
+</nav>
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">MY DIARY BLOG</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
 
-<!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="https://miimolnwza.github.io/miimoza" class="w3-bar-item w3-button w3-padding-large">Home</a>
-</div>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
 
   <!-- Automatic Slideshow Images -->
   <div class="mySlides w3-display-container w3-center">
@@ -107,6 +127,16 @@ Happy Camp ... Let us meet</i></p>
 </footer>
 
 <script>
+ // Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
 // Automatic Slideshow - change image every 4 seconds
 var myIndex = 0;
 carousel();
