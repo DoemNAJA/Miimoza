@@ -125,6 +125,16 @@ body {font-family: "Lato", sans-serif }
 </footer>
 
 <script>
+ // Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
 // Automatic Slideshow - change image every 4 seconds
 var myIndex = 0;
 carousel();
